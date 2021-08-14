@@ -1,4 +1,5 @@
 def bubble(unsortedList):
+    count=0
     indexing_length = len(unsortedList) - 1 
     sorted = False #Create variable of sorted and set it equal to false
 
@@ -6,9 +7,12 @@ def bubble(unsortedList):
         sorted = True  # Break the while loop whenever we have gone through all the values
 
         for i in range(0, indexing_length): # For every value in the list
+            count+=1
             if unsortedList[i]>unsortedList[i+1]:
                 sorted = False # These values are unsorted
                 unsortedList[i], unsortedList[i+1] = unsortedList[i+1], unsortedList[i] #Switch these values
+    
+    print("# OF evaluations: ",count)
     return unsortedList # Return the sorted list.
 givenList=[4,8,1,14,8,2,9,5,7,6,6]
 print("The given unsorted list is: ",givenList)
